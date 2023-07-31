@@ -1,0 +1,20 @@
+def mejor_ruta(punto_a, punto_b):
+    n_estaciones = 10
+
+    # Transformamos los índices 1D a coordenadas 2D (fila, columna)
+    fila_a, col_a = punto_a // 5, punto_a % 5
+    fila_b, col_b = punto_b // 5, punto_b % 5
+
+    # Calculamos la distancia manhattan
+    distancia = abs(fila_a - fila_b) + abs(col_a - col_b)
+
+    return distancia
+
+# Ejemplo
+
+if __name__ == "__main__":
+    punto_a = 0  # Estación de partida
+    punto_b = 9  # Estación de llegada
+
+    distancia_minima = mejor_ruta(punto_a, punto_b)
+    print(f"La distancia mínima entre la estación {punto_a} y la estación {punto_b} es: {distancia_minima}")
